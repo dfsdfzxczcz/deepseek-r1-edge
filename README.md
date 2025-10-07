@@ -1,42 +1,44 @@
-# High-Impact Bioinformatics Paper Scraper
+# EdgeOne Pages AI: Utilize DeepSeek R1 for free at the edge.
 
-This script automates the process of finding recent, high-impact bioinformatics papers from PubMed based on predefined search categories.
+Utilize DeepSeek R1 in edge functions with integrated web search capabilities.
 
-## Features
+The search functionality utilizes [searxng](https://github.com/searxng/searxng) and is encapsulated via [EdgeOne Pages functions](https://edgeone.ai/document/162227908259442688).
 
-- **Advanced Search**: Uses detailed, structured queries to find papers on specific bioinformatics topics (e.g., Prognostic Models, WGCNA, Immune Infiltration).
-- **High-Impact Filtering**: Filters results to include only papers published in a configurable list of top-tier journals.
-- **Customizable**: Easy to change the search topic (article type, disease) and the list of high-impact journals.
+After deployment, the interface ensures a consistent experience with OpenAI and seamlessly integrates with other third-party tools.
 
-## Setup
+## Deploy
 
-1.  **Clone the repository:**
-    ```bash
-    git clone <repository_url>
-    cd <repository_directory>
-    ```
+[![Deploy with EdgeOne Pages](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?from=github&template=deepseek-r1-edge)
 
-2.  **Install dependencies:**
-    It is recommended to use a virtual environment.
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-    pip install -r requirements.txt
-    ```
+Live Example: [https://deepseek-r1-edge.edgeone.app](https://deepseek-r1-edge.edgeone.app)
 
-## How to Run
+More Templates: [EdgeOne Pages](https://edgeone.ai/pages/templates)
 
-1.  **Configure your search (Optional):**
-    Open `src/main.py` and modify the `ARTICLE_TYPE`, `DISEASE`, and `MIN_YEAR` variables to define your search.
+## Getting Started
 
-2.  **Run the script:**
-    ```bash
-    python src/main.py
-    ```
+First, run the development server:
 
-The script will print the search progress and a list of the final, filtered high-impact papers to the console.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## Customization
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
--   **To add new search categories:** Open `src/query_builder.py` and add a new entry to the `QUERY_TEMPLATES` dictionary following the existing format.
--   **To modify the high-impact journal list:** Open `src/config.py` and add or remove journal names from the `HIGH_IMPACT_JOURNALS` set. Make sure to use lowercase for the journal names.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!

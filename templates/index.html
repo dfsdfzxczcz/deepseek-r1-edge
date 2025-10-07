@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-Impact Paper Search</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 2rem auto; padding: 0 1rem; background-color: #f8f9fa; }
+        h1 { color: #0056b3; }
+        form { background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        label { display: block; margin-bottom: 0.5rem; font-weight: bold; }
+        input[type="text"], select, input[type="number"] { width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background-color: #007bff; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer; transition: background-color 0.2s; }
+        button:hover { background-color: #0056b3; }
+        .container { text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PubMed High-Impact Paper Search</h1>
+        <p>Find high-impact bioinformatics papers from PubMed.</p>
+        <form action="/search" method="post">
+            <label for="article_type">Select Article Type:</label>
+            <select id="article_type" name="article_type" required>
+                {% for type in article_types %}
+                <option value="{{ type }}" {% if type == 'Prognostic Model' %}selected{% endif %}>{{ type }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="disease">Enter Disease or Topic:</label>
+            <input type="text" id="disease" name="disease" value="hepatocellular carcinoma" required>
+
+            <label for="year">Since Year:</label>
+            <input type="number" id="year" name="year" value="2021" min="1950" max="2099" required>
+
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</body>
+</html>
